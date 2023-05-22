@@ -13,14 +13,28 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.css">
+
   </head>
-<nav>
+    
+    <% if controller_name != 'home' || (action_name != 'login' && action_name != 'signup')%>
+    <nav>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <a href="/home">Discover</a>
+        </li>
+        <li>
+          <a href="/home">Bookmarks</a>
+        </li>
+        <li>
+          <a href="/home">Visits</a>
+        </li>
+        <li>
+          <a href="/home">Profile</a>
         </li>
       </ul>
-     </nav> 
+     </nav>
+     <% end %> 
 
   <body>
     <%= yield %>
